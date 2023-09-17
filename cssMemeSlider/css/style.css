@@ -21,7 +21,7 @@ main {
 }
 
 .overflow {
-    width: 50vw; 
+    width: 56vw; 
     overflow: hidden;      
 }
 
@@ -38,6 +38,7 @@ input {
 .texts {
     display: flex;    
     overflow: hidden;
+    transition: transform 0.5s ease-in-out;
     
 }
 
@@ -58,7 +59,10 @@ label:hover {
     background-color: rgb(224, 40, 209);
 }
 
-input:checked + label {
+#slide1:checked ~ .dots #l1,
+#slide2:checked ~ .dots #l2,
+#slide3:checked ~ .dots #l3,
+#slide4:checked ~ .dots #l4 {
     background-color: rgb(224, 40, 209);
 } 
 
@@ -68,21 +72,18 @@ input:checked + label {
     gap: 0.1em;
 }
 
-.overflow {
-    /* width: 100%; */
+.overflow {    
     overflow: hidden;
 }
 
 .slider {
     display: flex;
-    width: 400%;
-    /* так как у нас 4 слайдера */
+    width: 400%;    
     transition: transform 0.5s ease-in-out;
 }
 
 .slides {
-    width: 25%;
-    /* 100% / 4 слайдера */
+    width: 25%;    
 }
 
 
