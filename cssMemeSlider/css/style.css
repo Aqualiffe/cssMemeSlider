@@ -41,23 +41,7 @@ input {
     
 }
 
-.texts p {
-    
-}
-
-.slider {
-    display: flex;
-    overflow: hidden;
-    
-}
-
-img {
-    width: 50vw;    
-}
-/* #img2 {
-    transform: translateX(-100%);
-} */
-
+.texts p {}
 
 label {
     cursor: pointer;
@@ -83,17 +67,38 @@ input:checked + label {
     max-width: 50%; 
     gap: 0.1em;
 }
-#slide1:checked ~ .overflow #img1 {
+
+.overflow {
+    /* width: 100%; */
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+    /* так как у нас 4 слайдера */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides {
+    width: 25%;
+    /* 100% / 4 слайдера */
+}
+
+
+#slide1:checked~.overflow .slider {
     transform: translateX(0);
 }
 
-#slide2:checked ~ .overflow #img2 {
-    transform: translateX(-100%);
+#slide2:checked~.overflow .slider {
+    transform: translateX(-25%);
 }
-#slide3:checked ~ .overflow #img3 {
-    transform: translateX(-200%);
+
+#slide3:checked~.overflow .slider {
+    transform: translateX(-50%);
 }
-#slide4:checked ~ .overflow #img4 {
-    transform: translateX(-300%);
+
+#slide4:checked~.overflow .slider {
+    transform: translateX(-75%);
 }
 
