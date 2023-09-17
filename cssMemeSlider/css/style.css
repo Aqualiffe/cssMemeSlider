@@ -9,21 +9,23 @@ main {
     margin: 0 auto;
     align-items: center;
     max-width: 55vw;
-    min-height: 100vh;
+    min-height: 100vh; 
     justify-content: center;
 }
 
 .conteiner {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
+    flex-direction: row-reverse;
+    gap: 1em;
     justify-content: space-between;
     width: 55vw; 
+    margin: 0 auto;
 }
 
 .overflow {
     width: 100%; 
-    height: 100%;
+    
     overflow: hidden;      
 }
 
@@ -34,8 +36,10 @@ img {
 
 .text-overflow {
     display: flex;
-    max-width: 50%;
+    max-width: 70%;
     overflow: hidden;
+    order: 3;
+    align-items: center
 }
 
 input {
@@ -43,13 +47,18 @@ input {
 }
 
 .texts {
-    display: flex;    
-    overflow: hidden;
+    display: flex; 
     transition: transform 0.5s ease-in-out;
-    
+    width: 400%;    
 }
 
-.texts p {}
+.texts p {
+    min-width: 100%;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
 
 label {
     cursor: pointer;
@@ -59,7 +68,7 @@ label {
     height: 1em;
     background-color: blueviolet;
     border-radius: 50%;
-    padding: 0.4em;    
+    padding: 0.5em;    
 }
 
 label:hover {
@@ -75,8 +84,10 @@ label:hover {
 
 .dots {
     display: flex;
-    max-width: 50%; 
+    align-items: center;
+    max-width: 30%; 
     gap: 0.1em;
+    order: 2;
 }
 
 .overflow {    
@@ -110,3 +121,29 @@ label:hover {
     transform: translateX(-75%);
 }
 
+#slide1:checked~.text-overflow .texts {
+    transform: translateX(0);
+}
+
+#slide2:checked~.text-overflow .texts {
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.text-overflow .texts {
+    transform: translateX(-200%);
+}
+
+#slide4:checked~.text-overflow .texts {
+    transform: translateX(-300%);
+}
+
+@media screen and (max-width: 830px) {
+    .conteiner {
+        flex-direction: column;        
+    }
+
+    .dots {
+        max-width: 100%;
+        justify-content: center
+    }
+}
