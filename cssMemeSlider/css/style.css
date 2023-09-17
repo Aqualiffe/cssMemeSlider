@@ -1,0 +1,99 @@
+body {
+    background-color: #aa9eaa;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 50vw;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.overflow {
+    width: 50vw; 
+    overflow: hidden;      
+}
+
+.text-overflow {
+    display: flex;
+    max-width: 50%;
+    overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+.texts {
+    display: flex;    
+    overflow: hidden;
+    
+}
+
+.texts p {
+    
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    
+}
+
+img {
+    width: 50vw;    
+}
+/* #img2 {
+    transform: translateX(-100%);
+} */
+
+
+label {
+    cursor: pointer;
+    display: block;
+    background-clip: content-box;
+    width: 1em;
+    height: 1em;
+    background-color: blueviolet;
+    border-radius: 50%;
+    padding: 0.4em;    
+}
+
+label:hover {
+    background-color: rgb(224, 40, 209);
+}
+
+input:checked + label {
+    background-color: rgb(224, 40, 209);
+} 
+
+.dots {
+    display: flex;
+    max-width: 50%; 
+    gap: 0.1em;
+}
+#slide1:checked ~ .overflow #img1 {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .overflow #img2 {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .overflow #img3 {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .overflow #img4 {
+    transform: translateX(-300%);
+}
+
